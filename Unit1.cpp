@@ -14,7 +14,7 @@
 int countAnswer(std::string str);
 bool isNumber(char ch);
 
-int main(int argc, char* argv[])
+int main()
 {
     std::string str;
     int answer;
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 
     countAnswer(str);
 
-    printf("\n\n\npress 1 to close application ");
+    printf("\n\n\nEnter 1 to close application ");
     char ch[20];
 
     gets(ch);
