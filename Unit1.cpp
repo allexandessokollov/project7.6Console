@@ -18,7 +18,6 @@ bool isNumber(char ch);
 
 int main()
 {
-
     int answer;
 
     char chArr[MAX_STRING_SIZE];
@@ -29,21 +28,15 @@ int main()
 
     fingIntegerNumber(chArr);
 
-
     puts("\n\n\nPress any key ... ");
     getch();
     getch();
     return 0;
-
 }
 
 void fingIntegerNumber(char chArr[])
 {
-
-
     int counter = 0, strLength = strlen(chArr);
-
-
 
     for(int i = 0; i < strLength; i++)
     {
@@ -54,7 +47,7 @@ void fingIntegerNumber(char chArr[])
             {
                 printf("%c", chArr[i - 1]);
             }
-            
+           
             printf("%c", chArr[i]);
             counter++;
         }
@@ -71,11 +64,9 @@ void fingIntegerNumber(char chArr[])
     }
 }
 
-
 bool isNumber(char ch)
 {
     return (ch >= '0'  && ch <= '9');
-
 }
 //---------------------------------------------------------------------------
  
