@@ -18,7 +18,7 @@ MAX_BUFFER_SIZE = 512;
 void fingIntegerNumber(char[]);
 bool isNumber(char ch);
 
-int main(int argc, char* argv[])
+int main()
 {
 
     int answer;
@@ -31,11 +31,10 @@ int main(int argc, char* argv[])
 
     fingIntegerNumber(chArr);
 
-    printf("\n\n\npress any sign to close application ");
-    char ch[MAX_BUFFER_SIZE];
 
-    gets(ch);
-
+    puts("\nPress any key ... ");
+    getch();
+    getch();
     return 0;
 }
 
@@ -111,6 +110,11 @@ void fingIntegerNumber(char chArr[])
 bool isNumber(char ch)
 {
     return ch >= '0'  && ch <= '9';
+
 }
 //---------------------------------------------------------------------------
  
+
+
+
+
