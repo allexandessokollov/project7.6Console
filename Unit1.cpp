@@ -11,9 +11,7 @@
 #include <stdlib.h>
 #pragma argsused
 
-const int MAX_ANSWER_SIZE = 128,
-MAX_STRING_SIZE = 512,
-MAX_BUFFER_SIZE = 512;
+const int MAX_STRING_SIZE = 512;
 
 void fingIntegerNumber(char[]);
 bool isNumber(char ch);
@@ -32,84 +30,51 @@ int main()
     fingIntegerNumber(chArr);
 
 
-    puts("\nPress any key ... ");
+    puts("\n\n\nPress any key ... ");
     getch();
     getch();
     return 0;
+
 }
-
-
-
-
-
 
 void fingIntegerNumber(char chArr[])
 {
 
 
-    int counter = 0,strLength = strlen(chArr);
-
-    char num[MAX_ANSWER_SIZE];
+    int counter = 0, strLength = strlen(chArr);
 
 
-    for(int i = 0; i < MAX_ANSWER_SIZE; i++)
-    {
-        num [i] = ' ';
-    }
 
     for(int i = 0; i < strLength; i++)
     {
 
         if(isNumber(chArr[i]))
         {
-            num[counter] = chArr[i];
-            counter++;
-
-            if(i > 0)
+            if(i > 0 && chArr[i - 1] == '-')
             {
-               if(chArr[i - 1] == '-')
-               {
-                   num[counter] = num[counter - 1];
-                   num[counter - 1] = chArr[i - 1];
-                   counter++;
-               }
-
+                printf("%c", chArr[i - 1]);
             }
+            
+            printf("%c", chArr[i]);
+            counter++;
         }
 
         if( (counter > 0) && (i == strLength - 1 || !isNumber(chArr[i])))
         {
-        
-            printf("\n\nyour integer number is:\n");
-
-            for(int i = 0; i < MAX_ANSWER_SIZE; i++)
-            {
-                if(num[i] != ' ')
-                {
-                    printf("%c" ,num[i]);
-                }
-
-            }
-
             break;
         }
-
     }
 
-    
     if(counter == 0)
     {
         printf("\n\nthere is no integer number\n\n");
     }
-
-
-    
 }
 
 
 bool isNumber(char ch)
 {
-    return ch >= '0'  && ch <= '9';
+    return (ch >= '0'  && ch <= '9');
 
 }
 //---------------------------------------------------------------------------
