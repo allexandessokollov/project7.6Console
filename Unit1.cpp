@@ -91,14 +91,13 @@ void fingIntegerNumber(char chArr[])
                 }
 
             }
-                
 
-                
             break;
         }
 
     }
 
+    
     if(counter == 0)
     {
         printf("\n\nthere is no integer number\n\n");

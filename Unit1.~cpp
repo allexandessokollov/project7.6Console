@@ -87,7 +87,7 @@ void fingIntegerNumber(char chArr[])
             {
                 if(num[i] != ' ')
                 {
-                    printf('%c',num[i]);
+                    printf("%c" ,num[i]);
                 }
 
             }
