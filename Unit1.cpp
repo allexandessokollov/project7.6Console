@@ -3,12 +3,11 @@
 #pragma hdrstop
 
 //---------------------------------------------------------------------------
-#include <string.h>
-#include <string>
+
 #include <iostream.h>
 #include <stdio.h>
 #include <conio.h>
-#include <stdlib.h>
+
 #pragma argsused
 
 const int MAX_STRING_SIZE = 512;
@@ -16,10 +15,10 @@ const int MAX_STRING_SIZE = 512;
 void fingIntegerNumber(char[]);
 bool isNumber(char ch);
 
+
 int main()
 {
     int answer;
-
     char chArr[MAX_STRING_SIZE];
 
     printf("Enter your string\n");
@@ -32,41 +31,40 @@ int main()
     getch();
     getch();
     return 0;
+
 }
+
 
 void fingIntegerNumber(char chArr[])
 {
-    int counter = 0, strLength = strlen(chArr);
+    int //counter = 0,
+        startDigIndex = 0,
+        strLength = strlen(chArr);
 
-    for(int i = 0; i < strLength; i++)
+    while(startDigIndex < strLength && ! isNumber(chArr[startDigIndex]))
     {
-
-        if(isNumber(chArr[i]))
-        {
-            if(i > 0 && chArr[i - 1] == '-')
-            {
-                printf("%c", chArr[i - 1]);
-            }
-           
-            printf("%c", chArr[i]);
-            counter++;
-        }
-
-        if( (counter > 0) && (i == strLength - 1 || !isNumber(chArr[i])))
-        {
-            break;
-        }
+        startDigIndex++;
     }
 
-    if(counter == 0)
+    if(startDigIndex < strLength &&
+        startDigIndex > 0 &&
+        chArr[startDigIndex - 1] == '-')
     {
-        printf("\n\nthere is no integer number\n\n");
+        printf("-");
     }
+
+    while(startDigIndex < strLength &&  isNumber(chArr[startDigIndex]))
+    {
+            printf("%c", chArr[startDigIndex++]);
+    }
+    ;  
 }
+
 
 bool isNumber(char ch)
 {
     return (ch >= '0'  && ch <= '9');
+
 }
 //---------------------------------------------------------------------------
  
